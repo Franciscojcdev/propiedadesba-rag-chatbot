@@ -4,12 +4,31 @@ An AI-powered chatbot for a real estate agency in Córdoba, Argentina. Built wit
 
 ---
 
+## Demo
+
+**Searching for apartments:**
+
+![Demo - Apartment search](https://raw.githubusercontent.com/Franciscojcdev/propiedadesba-rag-chatbot/main/demo-departamento.png)
+
+**Searching for gated community houses:**
+
+![Demo - Gated community](https://raw.githubusercontent.com/Franciscojcdev/propiedadesba-rag-chatbot/main/demo-barrio-cerrado.png)
+
+**Contact information retrieval:**
+
+![Demo - Contact info](https://raw.githubusercontent.com/Franciscojcdev/propiedadesba-rag-chatbot/main/demo-contacto.png)
+
+---
+
 ## How It Works
 
 The system is composed of two workflows:
 
 ### Workflow 1 — Document Ingestion Pipeline
+
 Automatically processes property documents uploaded to Google Drive and loads them into a Pinecone vector database.
+
+![Ingestion Workflow](https://raw.githubusercontent.com/Franciscojcdev/propiedadesba-rag-chatbot/main/ingestion-workflow.png)
 
 ```
 Google Drive Trigger → Download File → Pinecone Vector Store
@@ -27,7 +46,10 @@ Google Drive Trigger → Download File → Pinecone Vector Store
 5. Vectors are stored in Pinecone index `propiedadesba` under namespace `propiedades`
 
 ### Workflow 2 — RAG Chatbot
+
 A conversational agent that retrieves relevant property information from Pinecone and responds to user queries with context-aware answers.
+
+![Chatbot Workflow](https://raw.githubusercontent.com/Franciscojcdev/propiedadesba-rag-chatbot/main/chatbot-workflow.png)
 
 ```
 Chat Trigger → AI Agent
